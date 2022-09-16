@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import React from 'react';
+import SiteHeader from './components/partials/SiteHeader';
+import Login from './components/login/Login';
+import Register from './components/register/Register';
+// import Auth from './components/auth/Auth';
+import Guest from './components/auth/Guest'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SiteHeader />
+
+      <Routes>
+        <Route path="/" element={<Animals />} />
+        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/animals/:animalId/edit" element={<Auth component={EditAnimalDetails} />} /> */}
+        <Route path="/register" element={<Guest component={Register} />} />
+        <Route path="/user/login" element={<Guest component={Login} />} />
+      </Routes>
+
+      {/* <ToastContainer /> */}
     </div>
   );
 }
+function Animals() {
+  return (
+    <p> Home Page</p>
+  )
+} 
+function Profile() {
+  return (
+    <p> Profile</p>
+  )
+} 
 
 export default App;
