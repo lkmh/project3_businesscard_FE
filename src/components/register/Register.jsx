@@ -38,7 +38,11 @@ function Register() {
                 return response.json()
             })
             .then(jsonResponse => {
+
+                console.log('jsonResponse >>', jsonResponse)
+
                 if (jsonResponse.error) {
+                    console.log('success error')
                     toast.error(jsonResponse.error)
                     return
                 }
@@ -48,6 +52,8 @@ function Register() {
                 navigate('/user/login')
             })
             .catch(err => {
+                console.log('api error')
+                console.log(err)
                 toast.error(err.message)
             })
     }

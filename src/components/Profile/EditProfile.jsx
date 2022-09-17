@@ -1,9 +1,10 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 
-function Profile(props) {
+function EditProfile(props) {
 
   const [profile, setProfile] = useState({})
+  
 
   useEffect(() => {
     const fetchApi = () => {
@@ -36,7 +37,7 @@ function Profile(props) {
 
     fetchApi()
     }, [])
-
+    
 
   return (
     <div>
@@ -48,7 +49,7 @@ function Profile(props) {
                     </div> */}
                     <div className="me-12">
                         <label htmlFor="name" className="form-label">Name</label>
-                        <input type="string"  disabled={true} className="form-control" id="name" name="name" value={profile.name}  />
+                        <input type="string"  className="form-control" id="name" name="name" defaultValue={profile.name}  />
                     </div>
     </form>
 
@@ -57,4 +58,4 @@ function Profile(props) {
   )
 }
 
-export default Profile
+export default EditProfile

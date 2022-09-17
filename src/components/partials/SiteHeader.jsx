@@ -17,7 +17,7 @@ function SiteHeader() {
                     token ? (
                         <>
                         <Nav.Link><Link to="/profile">Profile</Link></Nav.Link>
-                        <Nav.Link><Link to="/profile/edit">Edit</Link></Nav.Link>
+                        <Nav.Link><Link to="/editprofile">Edit</Link></Nav.Link>
                         <Nav.Link><Link to="/profile/edit">Upload Photo</Link></Nav.Link>
                         <Nav.Link><Link to="/profile/edit">External View</Link></Nav.Link>
                         </>
