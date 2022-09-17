@@ -19,7 +19,7 @@ function SiteHeader() {
                         <Nav.Link><Link to="/profile">Profile</Link></Nav.Link>
                         <Nav.Link><Link to="/editprofile">Edit</Link></Nav.Link>
                         <Nav.Link><Link to="/uploadphoto">Upload Photo</Link></Nav.Link>
-                        <Nav.Link><Link to="/profile/edit">External View</Link></Nav.Link>
+                        <Nav.Link><Link to="/externalprofile">External View</Link></Nav.Link>
                         </>
                     ) :
                     <>

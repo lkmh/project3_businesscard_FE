@@ -9,6 +9,7 @@ import EditProfile from './components/profile/EditProfile';
 import UploadPhoto from './components/profile/UploadPhoto';
 import Auth from './components/auth/Auth';
 import Guest from './components/auth/Guest'
+import ExternalProfile from './components/profile/ExternalProfile';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/uploadphoto" element={<Auth component={UploadPhoto} />} />
         <Route path="/register" element={<Guest component={Register} />} />
         <Route path="/user/login" element={<Guest component={Login} />} />
+        <Route path="/externalprofile" element={<Auth component={ExternalProfile} />} />
       </Routes>
 
       {/* <ToastContainer /> */}

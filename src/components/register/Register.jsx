@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,15 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function Register() {
   
     const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-        rfid: '',
-        email: '',
-        password: '',
-        confirm_password: '',
-        name: '',
-        contact: '',
-
-    })
+    const [formData, setFormData] = useState({})
 
     const handleChange = e => {
         setFormData({
@@ -26,37 +19,55 @@ function Register() {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(JSON.stringify(formData))
-        fetch(`http://localhost:8000/users/register`, {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-type': 'application/json',
-            },
-        })
-            .then(response => {
-                return response.json()
-            })
-            .then(jsonResponse => {
-
-                console.log('jsonResponse >>', jsonResponse)
-
-                if (jsonResponse.error) {
-                    console.log('success error')
-                    toast.error(jsonResponse.error)
-                    return
-                }
-
-                console.log("Register Sucessful")
-
+        console.log('DATA submitted to the backend',formData)
+        const api  = "http://localhost:8000/users/register"
+        axios.post(
+            api,
+            formData
+            )
+            .then(function (response) {
+                console.log("RESPONSE", response)
+                toast(response.data)
                 navigate('/user/login')
             })
-            .catch(err => {
-                console.log('api error')
-                console.log(err)
-                toast.error(err.message)
+            .catch(function (error) {
+                console.log("ERROR",error)
+                toast(error)
             })
     }
+
+
+
+    //     fetch(`http://localhost:8000/users/register`, {
+    //         method: 'POST',
+    //         body: JSON.stringify(formData),
+    //         headers: {
+    //             'Content-type': 'application/json',
+    //         },
+    //     })
+    //         .then(response => {
+    //             return response.json()
+    //         })
+    //         .then(jsonResponse => {
+
+    //             console.log('jsonResponse >>', jsonResponse)
+
+    //             if (jsonResponse.error) {
+    //                 console.log('success error')
+    //                 toast.error(jsonResponse.error)
+    //                 return
+    //             }
+
+    //             console.log("Register Sucessful")
+
+    //             navigate('/user/login')
+    //         })
+    //         .catch(err => {
+    //             console.log('api error')
+    //             console.log(err)
+    //             toast.error(err.message)
+    //         })
+    // }
 
     return (
         <div className="register-page">

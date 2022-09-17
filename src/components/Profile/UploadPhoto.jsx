@@ -8,9 +8,12 @@ import 'react-toastify/dist/ReactToastify.css';
 function UploadPhoto() {
     const navigate = useNavigate()
     const [images, setImages] = useState([])
+    const [preview, setPreview] = useState([])
 
     function onImageChange(e) {
         setImages(e.target.files[0])
+        setPreview(URL.createObjectURL(e.target.files[0]))
+        
     }
 
     function handleFormSubmit(e) {
@@ -47,6 +50,7 @@ function UploadPhoto() {
         <div>
             <h1>Upload New Photo</h1>
             <ToastContainer />
+            <img width={200} height={200} src={preview} />
             <form onSubmit={handleFormSubmit}>
                 <input type="file" onChange={onImageChange}/>
                 <button type="submit" className="btn btn-primary">Upload Photo</button>
