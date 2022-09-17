@@ -1,8 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import "./external_profile_styles.css";
+
 
 
 function  ExternalProfile(props) {
@@ -43,13 +42,13 @@ function  ExternalProfile(props) {
 
 
   return (
-    <div>
+    <div >
         <title>{profile.name}</title>
-        <img src={profile.url}  width={200} height={200} alt="not found" />
+        <img src={profile.url}  class="ext-profile-pic" alt="not found" />
       <body>
         <div class="name">{profile.name}</div>
         <div>
-            <a href={ `mailto:${profile.email}`} target="_blank" rel="noreferrer" class="links">Email Me</a>
+            <a href={ `mailto:${profile.email}`}  target="_blank" rel="noreferrer" class="links">Email Me</a>
         </div>
         <div>
          {profile.whatsapp
@@ -75,9 +74,9 @@ function  ExternalProfile(props) {
             : ""
          }
         </div>
-  </body>
+    </body>
 
-    </div>
+</div>
     
   )
 }

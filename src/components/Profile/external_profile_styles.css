@@ -1,0 +1,58 @@
+
+.ext-profile-pic {
+    display: block;
+    margin-top:1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    height: auto;
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+#ext-profile-pic-edit {
+    display: block;
+    margin-top:7%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8%;
+    height: auto;
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+.form-label{
+    color: black;
+}
+
+.name {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 1%;
+}
+    
+.links {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 25px;
+    border: 1px solid black;
+    border-width: 3px;
+    width: 280px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.5s; 
+}
+    
+a:hover {
+    color: white;
+    background: black;
+}
