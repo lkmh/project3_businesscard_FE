@@ -11,7 +11,7 @@ function Profile(props) {
 
   useEffect(() => {
     const fetchApi = () => {
-        const api = 'http://localhost:8000/profile'
+        const api = 'https://tapcardv2.herokuapp.com/profile'
         const token = localStorage.getItem('user_token')
         axios.get(
                 api , 

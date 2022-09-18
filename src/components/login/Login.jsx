@@ -22,7 +22,7 @@ function Login() {
     const handleSubmit = e => {
         e.preventDefault()
         
-        fetch(`http://localhost:8000/users/login`, {
+        fetch(`https://tapcardv2.herokuapp.com/users/login`, {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {

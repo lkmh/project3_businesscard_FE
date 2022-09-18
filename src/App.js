@@ -33,7 +33,7 @@ function App() {
 }
 function Animals() {
   return (
-    <p> Home Page</p>
+    <p> Welcome to tap card please login to continue </p>
   )
 } 
 // function Profile() {

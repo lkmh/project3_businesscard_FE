@@ -22,7 +22,7 @@ function UploadPhoto() {
         const formData = new FormData();
         formData.append("uploaded_file", images);
         console.log('DATA submitted to the backend',formData)
-        const api = 'http://localhost:8000/profile/uploadPhoto'
+        const api = 'https://tapcardv2.herokuapp.com/profile/uploadPhoto'
         const token = localStorage.getItem('user_token')
         axios.post(
                 api , 

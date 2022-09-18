@@ -14,7 +14,7 @@ function EditProfile(props) {
 
   useEffect(() => {
     const fetchApi = () => {
-        const api = 'http://localhost:8000/profile'
+        const api =  "https://tapcardv2.herokuapp.com/profile"
         const token = localStorage.getItem('user_token')
         axios.get(
                 api , 
@@ -58,7 +58,7 @@ function EditProfile(props) {
     function handleFormSubmit(e) {
             console.log('DATA submitted to the backend',profile)
             e.preventDefault()
-            const api = 'http://localhost:8000/profile/edit'
+            const api = 'https://tapcardv2.herokuapp.com/profile/edit'
             const token = localStorage.getItem('user_token')
             axios.post(
                     api , 
