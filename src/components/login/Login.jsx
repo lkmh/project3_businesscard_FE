@@ -2,9 +2,10 @@ import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SiteHeader from '../partials/SiteHeader';
   
 
-function Login() {
+function Login(props) {
   
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -43,7 +44,7 @@ function Login() {
                 // store the token into localstorage / cookie
                 localStorage.setItem('user_token', jsonResponse.token)
 
-                navigate('/')
+                navigate('/profile')
             })
             .catch(err => {
                 toast.error(err.message)
@@ -52,6 +53,7 @@ function Login() {
 
     return (
         <div className="login-page">
+            <SiteHeader token={props.token} />
           <div>
       
         <ToastContainer />

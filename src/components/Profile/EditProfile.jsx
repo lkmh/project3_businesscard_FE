@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import SiteHeader from '../partials/SiteHeader';
 
 function EditProfile(props) {
    const navigate = useNavigate()
@@ -85,6 +86,7 @@ function EditProfile(props) {
 
     return (
         <div>
+            <SiteHeader token={props.token} />
         <h1>Profile Page</h1>
         <ToastContainer />
         <form onSubmit={handleFormSubmit}>

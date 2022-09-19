@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import axios from 'axios';
 import "./external_profile_styles.css";
+import SiteHeader from '../partials/SiteHeader';
 
 
 
@@ -43,6 +44,7 @@ function  ExternalProfile(props) {
 
   return (
     <div >
+      <SiteHeader token={props.token} />
         <title>{profile.name}</title>
         <img src={profile.url}  class="ext-profile-pic" alt="not found" />
       <body>

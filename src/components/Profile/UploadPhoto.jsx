@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SiteHeader from '../partials/SiteHeader';
   
-function UploadPhoto() {
+function UploadPhoto(props) {
     const navigate = useNavigate()
     const [images, setImages] = useState([])
     const [preview, setPreview] = useState([])
@@ -48,6 +49,7 @@ function UploadPhoto() {
 
     return (
         <div>
+            <SiteHeader token={props.token} />
             <h1>Upload New Photo</h1>
             <ToastContainer />
             <img width={200} height={200} src={preview} />

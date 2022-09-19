@@ -3,9 +3,11 @@ import axios from 'axios';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import SiteHeader from '../partials/SiteHeader';
 
 
 function Profile(props) {
+    console.log("props",props)
 
   const [profile, setProfile] = useState({})
 
@@ -44,6 +46,7 @@ function Profile(props) {
 
   return (
     <div>
+        <SiteHeader token={props.token} />
       <h1>Profile Page</h1>
       <img src={profile.url}  width={200} height={200} alt="image not found" />
       <form>

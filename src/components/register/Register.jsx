@@ -3,9 +3,10 @@ import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SiteHeader from '../partials/SiteHeader';
   
 
-function Register() {
+function Register(props) {
   
     const navigate = useNavigate()
     const [formData, setFormData] = useState({})
@@ -71,6 +72,7 @@ function Register() {
 
     return (
         <div className="register-page">
+            <SiteHeader token={props.token} />
             <h1 className="my-5">Register</h1>
             <ToastContainer />
             <div className="container">

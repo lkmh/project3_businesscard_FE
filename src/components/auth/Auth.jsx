@@ -30,7 +30,7 @@ function Auth(props) {
     
     // render props.component
     return (
-        <props.component></props.component>
+        <props.component token={token}></props.component>
     )
 }
 

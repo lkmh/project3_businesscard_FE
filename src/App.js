@@ -15,10 +15,10 @@ import ExternalProfile from './components/profile/ExternalProfile';
 function App() {
   return (
     <div className="App">
-      <SiteHeader />
+      {/* <SiteHeader /> */}
 
       <Routes>
-        <Route path="/" element={<Animals />} />
+        <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Auth component={Profile} />} />
         <Route path="/editprofile" element={<Auth component={EditProfile} />} />
         <Route path="/uploadphoto" element={<Auth component={UploadPhoto} />} />
@@ -31,9 +31,12 @@ function App() {
     </div>
   );
 }
-function Animals() {
+function Home(props) {
   return (
-    <p> Welcome to tap card please login to continue </p>
+    <div>
+      <SiteHeader token={props.token} />
+      <p> Welcome to tap card please login to continue </p>
+    </div>
   )
 } 
 // function Profile() {
