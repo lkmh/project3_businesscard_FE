@@ -9,7 +9,7 @@ function SiteHeader() {
     return (
     <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand><Link to="/">Tap Card</Link></Navbar.Brand>
+            <Navbar.Brand><Link to="/project3_businesscard_FE/">Tap Card</Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
