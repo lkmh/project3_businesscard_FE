@@ -18,7 +18,7 @@ function App() {
       {/* <SiteHeader /> */}
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/project3_businesscard_FE/" element={<Home />} />
         <Route path="/profile" element={<Auth component={Profile} />} />
         <Route path="/editprofile" element={<Auth component={EditProfile} />} />
         <Route path="/uploadphoto" element={<Auth component={UploadPhoto} />} />
